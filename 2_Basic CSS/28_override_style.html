@@ -1,0 +1,17 @@
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  .pink-text {
+    color: pink;
+  }
+  /* blue text will override pink because it declare second time (will use the below one)*/
+  .blue-text {
+    color: blue;
+  }
+</style>
+
+<!-- use blue-text instead -->
+<h1 class="pink-text blue-text">Hello World!</h1>
