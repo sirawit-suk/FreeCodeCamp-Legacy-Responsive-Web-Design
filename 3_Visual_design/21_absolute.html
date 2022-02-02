@@ -1,0 +1,93 @@
+<style>
+  /*
+  
+  relative vs absolute
+
+  absolute if the parent is not define the position ... the body will be the parent
+  if we have parent above it with relative position ... that will be the parent
+
+  relative mean it will stay in html flow position where it need to be and shift top right bottom left from there
+  and absolute it mean if top:0px; right:0px; it will stay at the top right corner of the parent box
+
+  */
+
+  #searchbar {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    border-style: solid;
+    border-color: blue;
+
+  }
+
+  section {
+    border-style: solid;
+    position: relative;
+    border-color: red;
+  }
+</style>
+
+<body>
+  <h1>Welcome!</h1>
+  <section>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+        <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+        <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+        <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <div>test</div>
+    <form id="searchbar">
+      <label for="search">Search:</label>
+      <input type="search" id="search" name="search">
+      <input type="submit" name="submit" value="Go!">
+    </form>
+  </section>
+</body>

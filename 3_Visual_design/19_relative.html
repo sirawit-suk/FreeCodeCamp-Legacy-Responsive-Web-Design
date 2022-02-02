@@ -1,0 +1,25 @@
+<!-- 
+CSS Box Model. 
+Block-level start on a new line (headings, paragraphs, and divs)
+inline (like images or spans)
+ -->
+
+ <!-- normal flow : (default way of html tag) -> CSS can overide -->
+
+ <!-- position : relative, 
+CSS should move it relative to its current position in the normal flow of the page. -->
+
+<!-- It pairs with the CSS offset properties of left or right, and top or bottom.  -->
+<!-- how many pixels, percentages, or ems to move the item away from where it is normally positioned. -->
+
+<style>
+    h2 {
+      position : relative; /* this is relative to it own sitting*/
+      top: 15px;
+    }
+  </style>
+  <body>
+    <h1>On Being Well-Positioned</h1>
+    <h2>Move me!</h2>
+    <p>I still think the h2 is where it normally sits.</p>
+  </body>

@@ -1,0 +1,66 @@
+<!-- tide -->
+
+<style>
+
+  /* :root as the same */
+  * { 
+      font-size: 30;
+  }
+
+  /* multiple tags */
+  strong, p {
+    color: cyan;
+  }
+  /* hierachy */
+  div p span {
+    color: lightgreen;
+  }
+  /* hierachy (strictly follow level by level (can't skip!)) */
+  div > div > span{
+    color:goldenrod;
+  }
+  /* start with .. after it will apply all ... */
+  h2 ~ h3 {
+    color: red;
+  }
+  /* start with ... after it will apply to (only consecutive one (and only one), can't skip)*/
+  h1 + p {
+    color: blue;
+  }
+</style>
+
+<!-- only in the same level will effect (and children of them will effect too) -->
+
+<body>
+  <div>
+    <!-- Start from here -->
+    <h2>head2</h2>
+    <p>paragraph1</p>
+
+    <!-- RED -->
+    <h3>head3 <i>italic</i></h3>
+    <span>span</span>
+
+    <!-- RED -->
+    <h3>head3</h3>
+    <p>paragraph2</p>
+
+    <!-- RED -->
+    <h3>head3</h3>
+  </div>
+  <p>not indent</p>
+
+  <div>
+    <h1>h1</h1>
+    <h5>h5</h5>
+    <p>papa 1 <span>span 1</span></p>
+    <p>papa 2 <strong> italic </strong></p>
+    <div>
+        <span>hey</span>
+        <h6>h6 <span>hey</span></h6>
+    </div>
+  </div>
+  <h1>test</h1>
+  <p>papa 1</p>
+  <p>papa 2</p>
+</body>
