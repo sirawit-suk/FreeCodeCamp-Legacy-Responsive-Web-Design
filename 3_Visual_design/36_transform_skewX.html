@@ -1,0 +1,21 @@
+<style>
+  div {
+    width: 70%;
+    height: 100px;
+    margin:  50px auto;
+  }
+  #top {
+    background-color: red;
+  }
+  #bottom {
+    background-color: blue;
+    /* it can be skewx() and work, but recommended skewX() is the best practice 
+      it will make rectangle to be a Parallelogram
+      can be postive and negative degrees
+    */
+    transform: skewX(24deg);
+  }
+</style>
+
+<div id="top"></div>
+<div id="bottom"></div>

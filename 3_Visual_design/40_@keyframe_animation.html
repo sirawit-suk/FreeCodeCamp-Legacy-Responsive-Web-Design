@@ -1,0 +1,42 @@
+<style>
+    /*
+    animation properties -> behave (8 properties)
+    @keyframes rule -> happen during that animation. 
+
+    2 importants
+    animation-name: sets the name of the animation, which is later used by @keyframes to tell CSS which rules go with which animations.
+    animation-duration: sets the length of time for the animation.
+    @keyframes is how to specify exactly what happens within the animation over the duration. 
+    from 0% to 100%. 
+   */
+  div {
+    height: 40px;
+    width: 70%;
+    background: black;
+    margin: 50px auto;
+    border-radius: 5px;
+  }
+
+  #rect {
+    animation-name: rainbow;
+    animation-duration: 4s;
+  }
+
+  @keyframes rainbow {
+    /* keyframe 0% - 100% */
+    0% {
+      background-color: blue;
+    }
+    50% {
+      background-color: green;
+    }
+    100% {
+      background-color: yellow;
+    }
+  }
+
+
+
+
+</style>
+<div id="rect"></div>
