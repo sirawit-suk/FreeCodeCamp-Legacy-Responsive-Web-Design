@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- head -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- style -->
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Helvetica Neue", Arial, sans-serif;
+      color: #333;
+      line-height: 1.5;
+      background-color: white;
+      margin: 0;
+      text-align: center;
+    }
+    main {
+      margin: 30px 8px;
+      padding: 15px;
+      background-color: #eeeeee;
+      border-radius: 5px;
+    }
+    @media (max-width: 460px) {
+      main {
+        margin: 0;
+      }
+    }
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 0px;
+    }
+    a {
+      color: #477ca7;
+    }
+    a:visited {
+      color: #74638f;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      margin: 0px auto;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .img-div {
+      background-color: white;
+      align-self: stretch;
+    }
+    figure {
+      background-color: white;
+      padding: 10px;
+      margin: 0px;
+    }
+    figcaption {
+      margin: 15px 0px 5px;
+    }
+    #tribute-box-info {
+      max-width: 580px;
+    }
+    ul {
+      text-align: left;
+      margin: 0 auto 50px auto;
+      line-height: 1.6;
+    }
+    li {
+      margin: 16px 0px;
+      /* top & bottom , left & right */
+    }
+    blockquote {
+      text-align: left;
+      font-style: italic;
+      margin: 0 auto 20px auto;
+      max-width: 540px;
+    }
+  </style>
+  <!-- body -->
+  <body>
+    <main id="main">
+      <div class="container">
+        <h1 id="title">Dr. Norman Borlaug</h1>
+        <p style="margin: 16px 0 16px">The man who saved a billion lives</p>
+        <figure id="img-div" class="img-div">
+          <img
+            id="image"
+            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute-page-main-image.jpg"
+            alt="Dr. Norman Borlaug with his crews image"
+          />
+          <figcaption id="img-caption">
+            Dr. Norman Borlaug, third from the left, trains biologists in Mexico
+            on how to increase wheat yields - part of his life-long war on
+            hunger.
+          </figcaption>
+        </figure>
+        <h3 style="margin: 50px 0 30px 0">
+          Here's a time line of Dr. Borlaug's life:
+        </h3>
+        <div id="tribute-box-info">
+          <ul id="tribute-info"></ul>
+        </div>
+        <blockquote>
+          <p>
+            "Borlaug's life and achievement are testimony to the far-reaching
+            contribution that one man's towering intellect, persistence and
+            scientific vision can make to human peace and progress."
+          </p>
+          <p>-- Indian Prime Minister Manmohan Singh</p>
+        </blockquote>
+        <h3>
+          If you have time, you should read more about this incredible human
+          being on his
+          <a
+            id="tribute-link"
+            href="https://en.wikipedia.org/wiki/Norman_Borlaug"
+            target="_blank"
+            >Wikipedia entry.</a
+          >
+        </h3>
+      </div>
+    </main>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script>
+      const infomations = [
+        {
+          year: "1914",
+          description: "Born in Cresco, Iowa",
+        },
+        {
+          year: "1933",
+          description:
+            'Leaves his family\'s farm to attend the University of Minnesota, thanks to a Depression era program known as the "National Youth Administration"',
+        },
+        {
+          year: "1935",
+          description:
+            'Has to stop school and save up more money. Works in the Civilian Conservation Corps, helping starving Americans. "I saw how food changed them", he said. "All of this left scars on me."',
+        },
+        {
+          year: "1937",
+          description:
+            "Finishes university and takes a job in the US Forestry Service",
+        },
+        {
+          year: "1938",
+          description:
+            "Marries wife of 69 years Margret Gibson. Gets laid off due to budget cuts. Inspired by Elvin Charles Stakman, he returns to school study under Stakman, who teaches him about breeding pest-resistent plants.Born in Cresco, Iowa",
+        },
+        {
+          year: "1941",
+          description:
+            "Tries to enroll in the military after the Pearl Harbor attack, but is rejected. Instead, the military asked his lab to work on waterproof glue, DDT to control malaria, disinfectants, and other applied science.",
+        },
+        {
+          year: "1942",
+          description: "Receives a Ph.D. in Genetics and Plant Pathology",
+        },
+        {
+          year: "1944",
+          description:
+            "Rejects a 100% salary increase from Dupont, leaves behind his pregnant wife, and flies to Mexico to head a new plant pathology program. Over the next 16 years, his team breeds 6,000 different strains of disease resistent wheat - including different varieties for each major climate on Earth.",
+        },
+        {
+          year: "1945",
+          description:
+            "Discovers a way to grown wheat twice each season, doubling wheat yields",
+        },
+        {
+          year: "1953",
+          description:
+            "crosses a short, sturdy dwarf breed of wheat with a high-yeidling American breed, creating a strain that responds well to fertilizer. It goes on to provide 95% of Mexico's wheat.",
+        },
+        {
+          year: "1962",
+          description:
+            "Visits Delhi and brings his high-yielding strains of wheat to the Indian subcontinent in time to help mitigate mass starvation due to a rapidly expanding population",
+        },
+        {
+          year: "1970",
+          description: "receives the Nobel Peace Prize",
+        },
+        {
+          year: "1983",
+          description:
+            "helps seven African countries dramatically increase their maize and sorghum yields",
+        },
+        {
+          year: "1984",
+          description:
+            "becomes a distinguished professor at Texas A&M University",
+        },
+        {
+          year: "2005",
+          description:
+            'states "we will have to double the world food supply by 2050." Argues that genetically modified crops are the only way we can meet the demand, as we run out of arable land. Says that GM crops are not inherently dangerous because "we\'ve been genetically modifying plants and animals for a long time. Long before we called it science, people were selecting the best breeds."',
+        },
+        {
+          year: "2009",
+          description: "dies at the age of 95.",
+        },
+      ];
+
+      const listInfo = document.getElementById("tribute-info");
+
+      infomations.forEach((infomation) => {
+        const item = document.createElement("li");
+        const yearText = document.createElement("Strong");
+
+        // add <Strong>Year</Strong> inside item <li> tag
+        yearText.append(infomation.year);
+        item.appendChild(yearText);
+        // add text description after
+        item.append(" - " + infomation.description);
+
+        listInfo.appendChild(item);
+      });
+    </script>
+  </body>
+</html>
