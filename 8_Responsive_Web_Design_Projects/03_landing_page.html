@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- import fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
+  </head>
+  <style>
+    @import "https://fonts.googleapis.com/css?family=Lato:400,700";
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #eeeeee;
+      font-family: "Lato", sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      background-color: #eeeeee;
+      min-height: 75px;
+      width: 100vw;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #header-img {
+      width: 60vw;
+      height: 100%;
+      max-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-left: 20px;
+    }
+
+    @media (max-width: 550px) {
+      header {
+        flex-wrap: wrap;
+      }
+      #header-img {
+        width: 100%;
+        margin-top: 15px;
+        margin-left: -30px;
+      }
+    }
+
+    .nav-bar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      width: 35vw;
+    }
+
+    .nav-bar > a {
+      display: block;
+    }
+
+    @media (max-width: 650px) {
+      .nav-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 550px) {
+      header {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .nav-link,
+    .nav-link:visited {
+      padding-bottom: 5px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+    }
+    .footer-nav {
+      gap: 20px;
+    }
+
+    .form-group {
+      margin-top: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 200px;
+    }
+
+    @media (max-width: 550px) {
+      .form-group {
+        margin-top: 120px;
+      }
+    }
+
+    .form-control {
+      display: block;
+      padding: 0.4em;
+      width: 100%;
+      max-width: 275px;
+    }
+
+    .margin-spacing-y {
+      margin: 10px auto;
+    }
+
+    button {
+      background-color: #f1c40f;
+      font-weight: 700;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 0.12em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: orange;
+      transition: background-color 1s;
+    }
+
+    /* feature */
+    .feature-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 125px;
+      width: 20vw;
+      color: darkorange;
+    }
+
+    .feature-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 125px;
+      width: 80vw;
+      padding: 5px;
+    }
+
+    @media (max-width: 550px) {
+      .icon {
+        display: none;
+      }
+      .feature-info {
+        width: 100vw;
+        text-align: center;
+      }
+    }
+
+    /* prices */
+    .price-container {
+      margin-top: 60px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    @media (max-width: 800px) {
+      .price-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        width: 100%;
+        min-width: 300px;
+      }
+    }
+
+    .card {
+      border: 1px solid black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: calc(100% / 3);
+      margin: 10px;
+      border-radius: 3px;
+      text-align: center;
+    }
+    .card-header {
+      background-color: #dddddd;
+      padding: 15px;
+      width: 100%;
+      font-weight: 700;
+    }
+    .card > h2 {
+      margin-top: 15px;
+    }
+    .card > ul {
+      margin: 15px;
+    }
+    .card > ul > li {
+      margin: 5px 0;
+      list-style: none;
+    }
+    .card > button {
+      font-weight: 400;
+      margin: 15px auto;
+    }
+
+    /* footer */
+    .footer {
+      display: flex;
+      flex-direction: column;
+      background-color: #dddddd;
+      margin-top: 30px;
+      padding: 20px;
+      width: 100%;
+    }
+
+    .footer > p {
+      margin-top: 4px;
+      font-size: 0.9em;
+    }
+
+    .flex-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    .flex-footer > a {
+      margin: auto 8px;
+    }
+  </style>
+  <body>
+    <!-- fix nav bar -->
+    <header id="header">
+      <a href="">
+        <img
+        id="header-img"
+        src="https://cdn.freecodecamp.org/testable-projects-fcc/images/product-landing-page-logo.png"
+        alt="logo"
+      />
+      </a>
+      <nav id="nav-bar" class="nav-bar">
+        <a href="#feature" class="nav-link">Features</a>
+        <a href="#youtube-video" class="nav-link">How It Works</a>
+        <a href="#price" class="nav-link">Pricing</a>
+      </nav>
+    </header>
+    <!-- topic top section -->
+    <div class="page-wrapper">
+      <section id="topic">
+        <form id="form" action="https://www.freecodecamp.com/email-submit">
+          <div class="form-group">
+            <h2 class="margin-spacing-y" style="text-align: center">
+              Handcrafted, home-made masterpieces
+            </h2>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Enter your email address"
+              class="form-control margin-spacing-y"
+              required
+            />
+            <button class="margin-spacing-y" id="submit" type="submit">
+              GET STARTED
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section id="feature">
+        <!-- 1 st -->
+        <div class="flex-row">
+          <div class="icon"><i class="fa fa-3x fa-fire"></i></div>
+          <div class="feature-info">
+            <h2>Premium Materials</h2>
+            <p>
+              Our trombones use the shiniest brass which is sourced locally.
+              This will increase the longevity of your purchase.
+            </p>
+          </div>
+        </div>
+        <!-- 2 rd -->
+        <div class="flex-row">
+          <div class="icon"><i class="fa fa-3x fa-truck"></i></div>
+          <div class="feature-info">
+            <h2>Fast Shipping</h2>
+            <p>
+              We make sure you recieve your trombone as soon as we have finished
+              making it. We also provide free returns if you are not satisfied.
+            </p>
+          </div>
+        </div>
+        <!-- 3 nd -->
+        <div class="flex-row">
+          <div class="icon"><i class="fa fa-3x fa-battery-full"></i></div>
+          <div class="feature-info">
+            <h2>Quality Assurance</h2>
+            <p>
+              For every purchase you make, we will ensure there are no damages
+              or faults and we will check and test the pitch of your instrument.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- video -->
+      <section
+        id="youtube-video"
+        style="width: 100%; text-align: center; margin-top: 50px"
+      >
+        <iframe
+          id="video"
+          height="315"
+          style="width: 100%; max-width: 560px"
+          src="https://www.youtube.com/embed/y8Yv4pnO7qc"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </section>
+
+      <!-- 3 Cards -->
+      <section id="price">
+        <div class="price-container">
+          <div class="card">
+            <div class="card-header">TENOR TROMBONE</div>
+            <h2>$600</h2>
+            <ul>
+              <li>Lorem ipsum.</li>
+              <li>Lorem ipsum.</li>
+              <li>Lorem ipsum dolor.</li>
+              <li>Lorem ipsum.</li>
+            </ul>
+            <button>SELECT</button>
+          </div>
+          <div class="card">
+            <div class="card-header">BASS TROMBONE</div>
+            <h2>$900</h2>
+            <ul>
+              <li>Lorem ipsum.</li>
+              <li>Lorem ipsum.</li>
+              <li>Lorem ipsum dolor.</li>
+              <li>Lorem ipsum.</li>
+            </ul>
+            <button>SELECT</button>
+          </div>
+          <div class="card">
+            <div class="card-header">VALVE TROMBONE</div>
+            <h2>$1200</h2>
+            <ul>
+              <li>Plays similar to a Trumpet</li>
+              <li>Great for Jazz Bands</li>
+              <li>Lorem ipsum dolor.</li>
+              <li>Lorem ipsum.</li>
+            </ul>
+            <button>SELECT</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="flex-footer">
+          <a href="#" class="nav-link">Privacy</a>
+          <a href="#" class="nav-link">Terms</a>
+          <a href="#" class="nav-link">Contact</a>
+        </div>
+
+        <p class="flex-footer" style="color: rgba(0, 0, 0, 0.568)">
+          Copyright 2016, Original Trombones
+        </p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
