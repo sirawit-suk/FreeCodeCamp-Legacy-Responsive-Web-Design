@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pop Portfolio</title>
+
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <!-- fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    :root {
+      --main-white: #f0f0f0;
+      --main-red: #be3144;
+      --main-blue: #45567d;
+      --main-gray: #303841;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      /* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+      font-size: 62.5%;
+      scroll-behavior: smooth;
+    }
+
+    /* A few media query to set some font sizes at different screen sizes.
+ * This helps automate a bit of responsiveness.
+ * The trick is to use the rem unit for size values, margin and padding.
+ * Because rem is relative to the document font size
+ * when we scale up or down the font size on the document
+ * it will affect all properties using rem units for the values.
+*/
+
+    /* I am using the em unit for breakpoints
+ * The calculation is the following
+ * screen size divided by browser base font size
+ * As an example: a breakpoint at 980px
+ * 980px / 16px = 61.25em
+*/
+
+    /* 1200px / 16px = 75em */
+    @media (max-width: 75em) {
+      html {
+        font-size: 60%;
+      }
+    }
+
+    /* 980px / 16px = 61.25em */
+    @media (max-width: 61.25em) {
+      html {
+        font-size: 58%;
+      }
+    }
+
+    /* 460px / 16px = 28.75em */
+    @media (max-width: 28.75em) {
+      html {
+        font-size: 55%;
+      }
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    /* global customise */
+    h1,
+    h2 {
+      font-family: "Raleway", sans-serif;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 6rem;
+    }
+
+    h2 {
+      font-size: 4.2rem;
+    }
+
+    a,
+    a:visited {
+      color: var(--main-white);
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      height: calc(100% - 6.8rem);
+      width: 100%;
+      object-fit: cover;
+      /* height: 800px; */
+    }
+
+    /* nav */
+    #navbar {
+      position: fixed;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      background-color: var(--main-red);
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+      width: 100%;
+    }
+    #navbar ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-right: 2rem;
+    }
+    #navbar li {
+      padding: 2rem;
+      font-size: 2.2rem;
+      list-style-type: none;
+      white-space: nowrap;
+    }
+    #navbar li:hover {
+      background-color: var(--main-blue);
+    }
+
+    @media (max-width: 28.75em) {
+      #navbar {
+        justify-content: center;
+      }
+
+      #navbar ul {
+        margin: 0 1rem;
+      }
+    }
+
+    /* welcome-section */
+    #welcome-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: var(--main-white);
+      background-color: var(--main-gray);
+      height: 100vh;
+      width: 100%;
+      background-image: linear-gradient(44deg, #3a3d40 0%, #181719 100%);
+    }
+
+    #welcome-section h3 {
+      font-size: 3rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--main-red);
+    }
+
+    /* projects-section */
+    #projects {
+      color: var(--main-white);
+      background-color: var(--main-blue);
+      width: 100%;
+      text-align: center;
+      padding: 10rem 1rem;
+    }
+
+    #projects h2 {
+      border-bottom: solid var(--main-white) 1px;
+      margin: 0 auto 4rem auto;
+      max-width: 640px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      width: 100%;
+      grid-gap: 4rem;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      margin-bottom: 6rem;
+    }
+
+    .project-tile {
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      background-color: var(--main-gray);
+      height: 35vh;
+      min-height: 300px;
+    }
+
+    .project-tile h3 {
+      padding: 2rem 0.5rem;
+      width: 100%;
+      font-weight: 400;
+    }
+
+    .code {
+      color: var(--main-gray);
+      transition: color 0.3s ease-out;
+    }
+    .project-tile:hover .code {
+      color: #ff7f50;
+    }
+
+    #projects button {
+      color: inherit;
+      padding: 20px;
+      font-size: 2rem;
+      border: none;
+      background-color: var(--main-gray);
+      cursor: pointer;
+      transition: background-color 0.3s ease-out;
+    }
+
+    #projects button:hover {
+      background-color: var(--main-red);
+    }
+    #projects button i {
+      margin-left: 6px;
+      transition: transform 0.3s ease-out;
+    }
+    #projects button:hover i {
+      transform: translateX(5px);
+    }
+
+    /* contact section */
+    #contact {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: var(--main-white);
+      height: 82vh;
+      text-align: center;
+      background-color: var(--main-gray);
+    }
+
+    #contact h2 {
+      font-size: 6rem;
+    }
+
+    #contact p {
+      font-style: italic;
+    }
+
+    .contact-flex-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      margin-top: 4rem;
+      font-size: 2.4rem;
+      max-width: 980px;
+      text-shadow: 2px 2px 1px #1f1f1f;
+    }
+
+    .contact-flex-row a {
+      padding: 1rem 2rem;
+      transition: transform 0.3s ease-out;
+    }
+    .contact-flex-row a:hover{
+      transform: translateY(8px);
+    }
+
+    .contact-flex-row i {
+      margin-right: 1rem;
+
+    }
+
+
+
+    /* footer */
+    #footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 2rem;
+      border-top: solid var(--main-red) 4px;
+      background-color: var(--main-gray);
+      color: var(--main-white);
+    }
+    #footer p {
+      padding: 2rem;
+    }
+  </style>
+  <body>
+    <nav id="navbar">
+      <ul>
+        <li><a href="#welcome-section">About</a></li>
+        <li><a href="#projects">My Waifus</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <!-- 1st -->
+      <section id="welcome-section">
+        <h1>Hi! I'm Pop</h1>
+        <h3>an anime lover guy</h3>
+      </section>
+
+      <!-- 2nd -->
+      <section id="projects">
+        <h2>My Top 6 Waifus</h2>
+        <!-- Grid -->
+        <div class="project-grid">
+          <!-- first tile -->
+          <a href="https://aobuta.fandom.com/wiki/Mai_Sakurajima" class="project-tile" target="_blank">
+            <img
+              src="https://c4.wallpaperflare.com/wallpaper/167/572/994/mai-sakurajima-anime-seishun-buta-yarou-wa-bunny-girl-senpai-no-yume-o-minai-hd-wallpaper-preview.jpg"
+              alt=""
+            />
+            <h3>
+              <span class="code">&lt;</span>
+              Sakurajima Mai
+              <span class="code">&#47;&gt;</span>
+            </h3>
+          </a>
+
+          <!-- second tile -->
+          <a href="https://hyouka.fandom.com/wiki/Eru_Chitanda" class="project-tile" target="_blank">
+            <img
+              src="https://thicc.mywaifulist.moe/waifus/691/5c9b920db9e0ca8a08b5c3a01b69f92b29bb20be19a85ccc8fa50b31df870bbd_thumb.png"
+              alt=""
+              style="object-position: 0 20%;"
+            />
+            <h3>
+              <span class="code">&lt;</span>
+              Chitanda Eru
+              <span class="code">&#47;&gt;</span>
+            </h3>
+          </a>
+
+          <!-- third tile -->
+          <a href="https://oregairu.fandom.com/wiki/Yui_Yuigahama" class="project-tile" target="_blank">
+            <img
+              src="https://wallpaperaccess.com/full/6172868.jpg"
+              alt=""
+            />
+            <h3>
+              <span class="code">&lt;</span>
+              Yuigahama Yui
+              <span class="code">&#47;&gt;</span>
+            </h3>
+          </a>
+
+          <!-- fourth tile -->
+          <a href="https://you-zitsu.fandom.com/wiki/Suzune_Horikita" class="project-tile" target="_blank">
+            <img
+              src="https://imgix.ranker.com/user_node_img/50096/1001917410/original/suzune-horikita-photo-u1?w=350&h=350&q=90&fm=jpg&fit=crop&crop=faces"
+              alt=""
+            />
+            <h3>
+              <span class="code">&lt;</span>
+              Horikita Suzune
+              <span class="code">&#47;&gt;</span>
+            </h3>
+          </a>
+
+          <!-- fifth tile -->
+          <a href="https://masamunekuns-revenge.fandom.com/wiki/Aki_Adagaki" class="project-tile" target="_blank">
+            <img
+              src="https://i.pinimg.com/originals/43/bd/b6/43bdb6d1cfc0539a712b06b04eb46ab6.jpg"
+              alt=""
+              style="object-position: 0 0%;"
+            />
+            <h3>
+              <span class="code">&lt;</span>
+              Adagaki Aki
+              <span class="code">&#47;&gt;</span>
+            </h3>
+          </a>
+
+          <!-- sixth tile -->
+          <a href="https://toarumajutsunoindex.fandom.com/wiki/Misaka_Mikoto" class="project-tile" target="_blank">
+            <img
+              src="https://pbs.twimg.com/media/EFq_4VjWwAEttkm.jpg"
+              alt=""
+            />
+            <h3>
+              <span class="code">&lt;</span>
+              Misaka Mikoto
+              <span class="code">&#47;&gt;</span>
+            </h3>
+          </a>
+        </div>
+        <a href="https://myanimelist.net/animelist/popeyeza12?status=2&order=4&order2=0"
+        target="_blank"
+          ><button>My Anime List<i class="fas fa-chevron-right"></i></button
+        ></a>
+      </section>
+
+      <!-- 3rd -->
+      <section id="contact">
+        <h2 >Can you speak Japanese?</h2>
+        <p style="margin-top: 2rem;">日本語が話せますか？</p>
+        <!-- Facebook -->
+        <div class="contact-flex-row">
+          <a id="facebook" target="_blank" href="https://www.facebook.com/pop.sukwattanavit/"><i class="fab fa-facebook-square"></i>Facebook</a>
+          <a id="profile-link" target="_blank" href="https://github.com/sirawit-suk"><i class="fab fa-github"></i>Github</a>
+          <a id="twitter" target="_blank" href="https://twitter.com/sirawit_suk"><i class="fab fa-twitter"></i>Twitter</a>
+          <a href=""><i class="fas fa-at"></i>Send a mail</a>
+          <a href=""><i class="fas fa-mobile-alt"></i>Call me</a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <p>
+        Arigatou gozaimasu
+      </p>
+      <p>© Created by Sirawit Sukwattanavit</p>
+    </footer>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
