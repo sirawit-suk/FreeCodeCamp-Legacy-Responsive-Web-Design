@@ -3,7 +3,7 @@
 <style>
 
   /* :root as the same */
-  * { 
+  * {
       font-size: 30;
   }
 
@@ -11,22 +11,50 @@
   strong, p {
     color: cyan;
   }
+  /* Contextual/descendant Selector */
   /* hierachy */
   div p span {
     color: lightgreen;
   }
+  /* Direct child selectors */
   /* hierachy (strictly follow level by level (can't skip!)) */
   div > div > span{
     color:goldenrod;
   }
-  /* start with .. after it will apply all ... */
-  h2 ~ h3 {
+  /* Indirect Adjacent Sibling Combinator */
+  /* start with .. same level it will apply all ... */
+  h2 ~ h3,h4 {
     color: red;
   }
+  /* Direct Adjacent Sibling Combinator */
   /* start with ... after it will apply to (only consecutive one (and only one), can't skip)*/
   h1 + p {
     color: blue;
   }
+
+
+  /* .col1 {
+    float: left;
+    width:50%;
+  } */
+
+  /* .col2 {
+    float:right;
+    width:50%;
+  } */
+
+  #wtf {
+    display: grid;
+  }
+
+  .col1{
+    width: 50%;
+  }
+  .col2{
+    width: 50%;
+  }
+
+
 </style>
 
 <!-- only in the same level will effect (and children of them will effect too) -->
@@ -34,6 +62,11 @@
 <body>
   <div>
     <!-- Start from here -->
+    <h2>head2</h2>
+    <h3>head3 <i>italic</i></h3>
+    <h4>head4 <i>italic</i></h4>
+    <h4>head4 <i>italic</i></h4>
+    <h3>head3 <i>italic</i></h3>
     <h2>head2</h2>
     <p>paragraph1</p>
 
@@ -54,13 +87,79 @@
     <h1>h1</h1>
     <h5>h5</h5>
     <p>papa 1 <span>span 1</span></p>
+    <p>papa 1 <span>span 2</span></p>
     <p>papa 2 <strong> italic </strong></p>
     <div>
         <span>hey</span>
         <h6>h6 <span>hey</span></h6>
     </div>
   </div>
+  <p>papa -1</p>
+  <p>papa 0</p>
   <h1>test</h1>
   <p>papa 1</p>
   <p>papa 2</p>
+  <p>papa 3</p>
+
+  <h1>test</h1>
+  <p>papa 1</p>
+
+
+  <h4>saasdasd</h4>
+  <input type="text"> <br>
+  <input type="text">
+
+  <br>
+
+  <div id="wtf">
+  <div class="col1">
+    <h3>Introduction</h3>
+    <ul>
+
+      <li>1111</li>
+      <li>2222</li>
+      <li>333</li>
+
+      <li>4444</li>
+      <li>555</li>
+
+      <li>666</li>
+
+    </ul>
+
+
+  </div>
+  <div class="col2">
+
+    <h3>Introduction</h3>
+    <ul>
+
+      <li>1111</li>
+      <li>2222</li>
+      <li>333</li>
+
+      <li>4444</li>
+      <li>555</li>
+
+      <li>666</li>
+
+    </ul>
+
+  </div>
+
+
+  <a href="test.jpg" onclick="showPic(this);" title="xxxx">ASDASDAS</a>
+  <img id="placeholder" src="cat.png" alt="wtfffffffff"/>
+
+</div>
+
+
+
+  <script type="text/javascript">
+    function showPic(whichpic) {
+      document.getElementById("placeholder").src = whichpic;
+    }
+  </script>
+
+
 </body>
