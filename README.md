@@ -6,3 +6,6 @@ This is the same certificate as "New Responsive Web Design" course.
 but I have to update my knowledge to the new course because they have created so many interesting new lessons to learn.
 
 By the way, I have learned from this course a lot... before I become an intern as full-stack developer. :)
+
+Course link: [FreeCodeCamp Legacy Responsive Web Design](https://www.freecodecamp.org/learn/responsive-web-design/)
+New repository: [FreeCodeCamp New Responsive Web Design](https://github.com/sirawit-suk/FreeCodeCamp-New-Responsive-Web-Design)
